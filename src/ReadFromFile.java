@@ -16,7 +16,7 @@ public class ReadFromFile {
 			InputStream in = Files.newInputStream(Paths.get("file.ser"));
 			input = new ObjectInputStream(in);
 
-			System.out.println("File is opened");
+			System.out.println("File is opened for reading");
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -55,7 +55,7 @@ public class ReadFromFile {
 			if (input != null)
 				input.close();
 			
-			System.out.println("File is closed.");
+			System.out.println("No more reading.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

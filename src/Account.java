@@ -1,7 +1,8 @@
 import java.io.Serializable;
 
 public class Account implements Serializable{
-
+	private static final long serialVersionUID = 1L;
+	
 	private int account;
 	private String name;
 	private String surname;
@@ -16,7 +17,7 @@ public class Account implements Serializable{
 	}
 	
 	public String toString() {
-		return account + ", " + name + ", " + surname + ", " + balance; 
+		return String.format("%-10s%-12s%-12s%10s%n", account, name, surname, balance);
 	}
 
 	public int getAccount() {

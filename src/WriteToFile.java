@@ -16,7 +16,7 @@ public class WriteToFile {
 			OutputStream out = Files.newOutputStream(Paths.get("file.ser"));
 			output = new ObjectOutputStream(out);
 			
-			System.out.println("File is opened");
+			System.out.println("File is opened for writing");
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -27,8 +27,6 @@ public class WriteToFile {
 	public void addRecords() {
 
 		Scanner sc = new Scanner(System.in);
-
-		while (sc.hasNext()) {
 
 			try {
 
@@ -41,10 +39,9 @@ public class WriteToFile {
 				sc.nextLine();
 			} catch (IOException e) {
 				e.printStackTrace();
-				break;
 			}
-		}
 
+			sc.close();
 	}
 
 	public void closeFile() {
@@ -52,7 +49,7 @@ public class WriteToFile {
 			if (output != null)
 				output.close();
 			
-			System.out.println("File is closed.");
+			System.out.println("No more writing.");
 
 		} catch (IOException e) {
 			e.printStackTrace();
